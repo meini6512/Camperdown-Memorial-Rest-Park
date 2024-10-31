@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About page</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header section with navigation bar -->
+    <header>
+        <nav>
+            <!-- Sidebar navigation for mobile view -->
+            <ul class="sidebar">
+                <li onclick="hideSidebar()">
+                    <a href="#">
+                        <!-- SVG icon to close the sidebar -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- Links to other pages of the site -->
+                <li><a href="about.html">About</a></li>
+                <li><a href="safety.html">Safety & Legal Guidelines</a></li>
+                <li><a href="perfect moments.html">Perfect Moments</a></li>
+                <li><a href="photo gallery.html">Photo Gallery</a></li>
+            </ul>
+
+            <!-- Main navigation for desktop view -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="hideOnMobile"><a href="about.html">About</a></li>
+                <li class="hideOnMobile"><a href="safety.html">Safety & Legal Guidelines</a></li>
+                <li class="hideOnMobile"><a href="perfect moments.html">Perfect Moments</a></li>
+                <li class="hideOnMobile"><a href="photo gallery.html">Photo Gallery</a></li>
+                
+                <!-- Hamburger menu button for opening sidebar on mobile -->
+                <li class="menu-button" onclick="showSidebar()">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Functions for displaying or hiding sidebar in mobile view -->
+        <script>
+          function showSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+          }
+          function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+          }
+        </script>
+    </header>
+
+    <!-- Main content area of the About page -->
+    <main>
+        <!-- Section introducing the historical background of Camperdown Cemetery -->
+        <section class="about-section">
+          <img src="images/church.jpg" alt="church" class="church-image">
+          <div class="about-text">
+            <h1>History</h1>
+            <p>
+              Founded in 1848, Camperdown Cemetery became the primary cemetery in Sydney, 
+              holding around 18,000 burials until it transitioned into Camperdown Memorial 
+              Rest Park in 1948. Established to relieve the crowded burial sites at Town Hall
+               and Central railway station, the cemetery served as a resting place for many of 
+               Sydney’s early settlers. Over time, it became a symbol of historical and cultural memory.
+            </p>
+          </div>
+        </section>
+
+        <!-- Discription for the B&W photographs -->
+        <section class="title-section">
+          <p>Camperdown Cemetery - Black & White photography.</p>
+        </section>
+
+        <!-- Section displaying images of the cemetery -->
+        <section class="graveyard-images-section">
+          <img src="images/graveyard 1.jpg" alt="graveyard-1" class="graveyard-1-image">
+          <img src="images/graveyard 22.jpg" alt="graveyard-2" class="graveyard-2-image">
+          <img src="images/graveyard 3.jpg" alt="graveyard-3" class="graveyard-3-image">
+          <img src="images/graveyard 4.jpg" alt="graveyard-4" class="graveyard-4-image">
+        </section>
+
+        <!-- Section describing the current use of Camperdown Memorial Rest Park -->
+        <section class="current-use-section">
+          <img src="images/park sidewalk 1.jpg" alt="current-use" class="current-use-image">
+          <div class="current-use-text">
+            <h1>Current Use</h1>
+            <p>
+              Today, Camperdown Memorial Rest Park has evolved into a vibrant community hub 
+              located in Newtown on Church Street. It is a popular space for relaxation, dog walking,
+               and social gatherings, featuring amenities such as a shaded, fenced playground, 
+               drinking fountains, toilets, and designated dog on- and off-leash areas. The park hosts 
+               a variety of events, from community festivals to small gatherings, making it a cherished 
+               cultural and social meeting place. Its open green spaces attract visitors seeking a peaceful 
+               spot for exercise, picnics, and photography, maintaining its role as both a historical landmark 
+               and a lively communal space.
+            </p>
+          </div>
+        </section>
+    </main>
+
+    <!-- Footer with camera description and credits -->
+    <footer>
+      <section class="camera-discription">
+       <h3>All Photos shot on Ricoh GR III.</h3>
+      </section>
+
+      <section class="credit">
+      <h5>Cynthia Ni</h5>
+     </section>
+   </footer>
+
+</body>
+</html>

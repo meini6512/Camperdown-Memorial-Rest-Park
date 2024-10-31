@@ -1,0 +1,763 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Base Styles */
+body {
+  min-height: 100vh;
+  background: linear-gradient(#819599, #000);
+  color: #fff;
+  text-shadow: 10px 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+}
+/*Home page starts here*/
+/* Header Section Styling, the header contains a nav bar and a sidebar on the right. */
+header{
+  background-color: #819599;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+header ul{
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header li{
+  height: 40px;
+}
+
+header a{
+  height: 100%;
+  padding: 0 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: rgb(0, 0, 0);
+}
+
+/* having underline when the mouse is hovering on the text */
+header a:hover{
+  text-decoration: underline;
+}
+
+header li:first-child{
+  margin-right: auto;
+}
+
+/* Sidebar list and styling, hamburger icon is displayed when using mobile screen */
+.sidebar{
+  position: fixed;
+  top: 0; 
+  right: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar li{
+  width: 100%;
+}
+
+.sidebar a{
+  width: 100%;
+}
+
+.menu-button{
+  display: none;
+}
+
+/* <main> starts with two sections, the first section has an introductory image and caption as well as a sacroll down arrow */
+.first.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  text-align: center;
+}
+
+.first.section figure {
+  margin-top: 180px;
+  margin-bottom: 20px;
+}
+
+.first.section img {
+  width: 40%;
+  border-radius: 18px;
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Arrow guiding user to scroll down */
+.scroll-down {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-down .arrow-down {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.scroll-down .arrow-down::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-right: 2px solid white; 
+  border-bottom: 2px solid white; 
+  transform: translate(-50%, -50%) rotate(45deg); 
+}
+
+.scroll-down a {
+  text-decoration: none;
+}
+
+/* Bounce animation for the arrow */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(10px);
+  }
+  60% {
+    transform: translateY(5px);
+  }
+}
+
+.scroll-down {
+  animation: bounce 2s infinite;
+}
+
+/* The second section of <main> is a embeded map with discriptions of the park's location */
+.second.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh;            
+  text-align: center;       
+}
+
+.second.section iframe {
+  margin-bottom: 20px;      
+}
+
+.second.section p {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  line-height: 1.6;
+
+}
+
+section iframe {
+  display: block;
+  margin: 0 auto;
+  width: 95vw;
+  height: 40vh;
+  max-width: 2000px;
+  border: 0;
+  border-radius: 18px; 
+  height: 60vh;
+}
+
+/* The third section of <main> is 3 clickable images (in grid display) that leads to separate pages. */
+.image-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-item {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  border-radius: 18px; 
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 18px; 
+}
+
+.image-item:nth-child(3) {
+  grid-column: span 2;
+  max-height: 600px; 
+}
+
+/* Overlay on Image Hover */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 20px;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.image-item:hover .overlay {
+  opacity: 1;
+}
+/* When hovering on the image, the overlay area shows a title and a subtitle. */
+.overlay h3 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.overlay p {
+  margin: 0;
+  font-size: 15px;
+}
+
+/*Responsive design for the home page*/
+@media (max-width: 1200px) {
+  #gallery {
+   -moz-column-count:    4;
+   -webkit-column-count: 4;
+   column-count:         4;
+  }
+}
+
+@media (max-width: 1000px) {
+  #gallery {
+   -moz-column-count:    3;
+   -webkit-column-count: 3;
+   column-count:         3;
+  }
+}
+
+@media (max-width: 800px) {
+  #gallery {
+   -moz-column-count:    2;
+   -webkit-column-count: 2;
+   column-count:         2;
+  }
+}
+
+@media (max-width: 400px) {
+  #gallery {
+   -moz-column-count:    1;
+   -webkit-column-count: 1;
+   column-count:         1;
+  }
+}
+
+
+
+@media(max-width: 800px){
+  .hideOnMobile{
+    display: none;
+  }
+  .menu-button{
+    display: block;
+  }
+}
+
+@media(max-width: 400px){
+  .sidebar{
+    width: 100%;
+  }
+}
+/*Home page ends here*/
+
+/*gallery page starts here*/
+.gallery.top.space {
+  height: 30vh;
+  margin-top: 180px;
+  text-align: center;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.gallery.top.space h1 {
+  /* Start with opacity 0 for animation */
+  opacity: 0;
+  animation: slideDissolveIn 1s ease forwards;
+}
+
+
+/* responsive design for gallery */
+#gallery {
+  line-height:0;
+  -webkit-column-count:5; /* split it into 5 columns */
+  -webkit-column-gap:5px; /* give it a 5px gap between columns */
+  -moz-column-count:5;
+  -moz-column-gap:5px;
+  column-count:3;
+  column-gap:8px;
+  margin-bottom: 100px;
+}
+#gallery img {
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom:5px;
+}
+
+#gallery img {
+  width: 100%;
+  height: auto;
+  /* Smooth animation when the images zoom in */
+  transition: transform 0.3s ease; 
+}
+
+#gallery img:hover {
+  transform: scale(1.02); /* Images zoom in by 10% when hovering on them */
+}
+/* The gallery page ends here */
+
+
+/* the about page styling starts form here*/
+/* The about-section contains an image of the church next to the graveyard and a paragraph about the park's history */
+.about-section {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  padding: 50px;
+  height: 100vh;
+}
+
+/* Position and size of the image at the top page */
+.church-image {
+  width: 450px;
+  height: 700px;
+  margin-bottom: 140px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border-radius: 10px;
+  /* Animation */
+  opacity: 0;
+  animation: dissolveSlideIn 1.5s ease-in forwards;
+}
+
+/* Styling for the text next to the image */
+.about-text {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 150px;
+  margin-right: 30px;
+  margin-top: 50px;
+  opacity: 0; /* Start invisible */
+  animation: textDissolveIn 1.5s ease-in forwards; /* 1.5-second dissolve-in animation */
+  animation-delay: 1.7s; /* Delay for better visual effect after the image */
+}
+
+.about-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+/* Discription/title for the B&W photographs */
+.title-section{
+  padding: 70px 0;
+  text-align: center;
+  animation: dissolveSlideIn 1.5s ease forwards;
+  animation-delay: 0.6s; /* Animation starts after the image animation */
+}
+
+/* Four graveyard images showcasing the art of B&W style photography */
+.graveyard-images-section {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  align-items: center;     /* Center the images vertically */
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  gap: 20px; /* Adds space between each image */
+  flex-wrap: wrap; /* This allows images to wrap to the next line on smaller screens */
+}
+
+/* styling posiion and size of the 4 B&W photographs */
+.graveyard-1-image,
+.graveyard-2-image,
+.graveyard-3-image,
+.graveyard-4-image {
+  width: 330px;
+  height: 230px;
+  border-radius: 10px;
+  opacity: 0; /* Animation start with opacity 0 */
+  animation: dissolveSlideIn 2.0s ease forwards;
+}
+
+/* Animation start times */
+.graveyard-1-image {
+  animation-delay: 0.3s;
+}
+
+.graveyard-2-image {
+  animation-delay: 0.6s;
+}
+
+.graveyard-3-image {
+  animation-delay: 0.9s;
+}
+
+.graveyard-4-image {
+  animation-delay: 1.2s;
+}
+
+/* Styling section about current use of the park. */
+.current-use-section {
+  display:flex;
+  justify-content: center;  
+  align-items: center;      
+  height: 100vh;            
+  text-align: center;
+  margin-right: 30px;
+}
+
+.current-use-image {
+  width: 650px;
+  height: 450px;
+  border-radius: 10px;
+  margin-left: 40px;
+  margin-right: 30px;
+  opacity: 0;
+  animation: dissolveSlideIn 1.5s ease forwards;
+  animation-delay: 0.3s; /* Start slightly after the page load */
+}
+
+.current-use-text {
+  max-width: 700px;
+  margin-top: 50px;
+  text-align: center;
+  margin-left: 10px;
+  margin-right: 20px;
+  opacity: 0; /* Start with opacity 0 */
+  animation: dissolveSlideIn 1.5s ease forwards;
+  animation-delay: 0.6s; /* Start after the image animation */
+}
+
+
+.current-use-text h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.current-use-text p {
+  font-size: 1.1em;
+  text-align:center;
+}
+
+/* Dissolves in and Slide in animations for the whole page */
+@keyframes dissolveSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start 50px below its final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the normal position */
+  }
+}
+
+@keyframes textDissolveIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px); /* Start 50px below its final position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the normal position */
+  }
+}
+
+/* Responsive design for the whole page using media queries */
+@media (max-width: 1000px) {
+  .about-section {
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; 
+    height: auto; /* Allow the section height to adjust automatically */
+  }
+
+  .church-image {
+    margin-right: 30;
+    margin-bottom: 20px; 
+  }
+
+  .about-text {
+    text-align: center; 
+  }
+
+
+  .graveyard-images-section {
+    flex-direction: column; 
+    height: auto;           /* Allow flexible height */
+    gap: 15px;              /* Adjust gap between images */
+  }
+
+  .graveyard-1-image,
+  .graveyard-2-image,
+  .graveyard-3-image,
+  .graveyard-4-image {
+    width: 90%;             /* Adjust width for smaller screens */
+    height: auto;           
+    max-width: 300px;       /* limit maximum width */
+  }
+
+  .current-use-section {
+    flex-direction: column; 
+    padding: 15px;          /* Add padding for spacing */
+    height: auto;
+    margin-bottom: 80px;
+  }
+
+  .current-use-image {
+    width: 90%;             
+    height: auto;           
+  }
+}
+/*about page ends here*/
+
+
+/*safety and legal guidelines page starts here*/
+.safety-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+/* Section styling for safety page */
+.safety-page section {
+  padding: 30px;
+  margin: 20px 0;
+  background-color: #e9e9e9;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(191, 191, 191, 0.1);
+  opacity: 0; /* Start with opacity 0 for animation */
+  animation: slideDissolveIn 1.5s ease forwards;
+}
+
+/* Three classes for sections on safety page */
+.safety-page .safety-guidelines {
+  animation-delay: 0.2s;
+}
+
+.safety-page .legal-requirements {
+  animation-delay: 0.4s;
+}
+
+.safety-page .protect-the-park {
+  animation-delay: 0.6s;
+}
+
+/* Animation for the three sections */
+@keyframes slideDissolveIn {
+  0% {
+      opacity: 0;
+      transform: translateY(30px); /* Slide up from 30px below */
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0); /* End at the normal position */
+  }
+}
+
+/* Text styling for safety page */
+.safety-page h1 {
+  font-size: 1.8em;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.safety-page p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #666666;
+}
+
+/* Responsive styling for the whole safety page */
+@media (max-width: 768px) {
+  .safety-page {
+      width: 90%; 
+  }
+
+  .safety-page h1 {
+      font-size: 1.5em;
+  }
+
+  .safety-page p {
+      font-size: 1em;
+  }
+
+  .safety-page section {
+      padding: 20px;
+  }
+}
+/*safety and legal guidelines page ends here*/
+
+/*perfect moments page styling starts here*/
+.perfect-moments-page {
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 0;
+}
+
+/*Styling the title and subtitle of the page*/
+.perfect-moments-title {
+  font-size: 1.8em;
+  color: #dcdcdc;
+  margin-bottom: 20px;
+  opacity: 0; 
+  animation: slideDissolveIn 1s ease forwards;
+}
+
+.natural-light-subtitle {
+  font-size: 1em;
+  color: #dcdcdc;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  opacity: 0; /* Start with opacity 0 for animation */
+  animation: slideDissolveIn 5s ease forwards;
+}
+
+/*This section contains 4 groups of time+discription. style the whole section here */
+.perfect-moments-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+/* Timeline styling */
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: left;
+  padding-left: 50px; /* Space for the timeline line */
+  opacity: 0; 
+  animation: slideDissolveIn 1.5s ease forwards;
+}
+
+.timeline-time {
+  font-weight: bold;
+  color: #dcdcdc;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+/*Discriptions of the timing for photography*/
+.timeline-description {
+  padding: 25px 30px;
+  border-radius: 8px;
+  max-width: 600px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  margin-left: 20px;
+}
+
+/* Dot styling next to the timeline */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+}
+
+/* Responsive styling for the whole page */
+@media (max-width: 768px) {
+  .perfect-moments-content {
+      width: 70%;
+  }
+
+  .perfect-moments-title {
+      font-size: 1.5em;
+  }
+
+  .timeline-time {
+      width: 60px;
+      font-size: 0.9em;
+  }
+
+  .timeline-description {
+      max-width: 100%;
+      font-size: 0.9em;
+      margin-left: 10px;
+  }
+}
+/*perfect moments page ends here*/
+
+
+/* Styling footers in the home page, about page, and the photo gallery page */
+/* The footers starts with a discription about the camera that took all the photos of this website */
+.camera-discription {
+  opacity: 0; 
+  animation: slideDissolveIn 1s ease forwards;
+  align-items: center; 
+  justify-content:center;
+  margin-bottom: 100px;
+  margin-top: 80px;
+  display: flex;
+}
+/* This section has my name Cynthia Ni */
+.credit {
+  opacity: 0; 
+  animation: slideDissolveIn 1s ease forwards;
+  align-items: center; 
+  justify-content:center;
+  margin-bottom: 100px;
+  display: flex;
+}
+

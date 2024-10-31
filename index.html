@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header section with navigation bar -->
+  <header>
+    <nav>
+      <!-- Sidebar menu for mobile view -->
+      <ul class="sidebar">
+        <li onclick=hideSidebar()><a href="#"> <!-- SVG icon for closing the sidebar --> <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/></svg></a></li>
+        
+        <!-- Navigation links for different pages -->
+        <li><a href="about.html">About</a></li>
+        <li><a href="safety.html">Safety & Legal Guidelines</a></li>
+        <li><a href="perfect moments.html">Perfect Moments</a></li>
+        <li><a href="photo gallery.html">Photo Gallery</a></li>
+      </ul>
+
+      <!-- Primary navigation for desktop view -->
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li class="hideOnMobile"><a href="about.html">About</a></li>
+        <li class="hideOnMobile"><a href="safety.html">Safety & Legal Guidelines</a></li>
+        <li class="hideOnMobile"><a href="perfect moments.html">Perfect Moments</a></li>
+        <li class="hideOnMobile"><a href="photo gallery.html">Photo Gallery</a></li>
+
+        <!-- Hamburger menu button for showing sidebar in mobile view -->
+        <li class="menu-button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26"><path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg></a></li>
+      </ul>
+    </nav>
+
+    <!-- functions for showing and hiding the sidebar -->
+    <script>
+      function showSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'flex'
+      }
+      function hideSidebar(){
+        const sidebar = document.querySelector('.sidebar')
+        sidebar.style.display = 'none'
+      }
+    </script>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <!-- First section with an introductory image and caption -->
+    <section class="first section">
+      <figure>
+        <img src="images/background.jpg" alt="park background">
+        <figcaption>Camperdown Memorial Rest Park.</figcaption>
+      </figure>
+
+      <!-- Scroll-down icon guiding to the next section -->
+      <div class="scroll-down">
+        <a href="#second-section">
+          <div class="arrow-down"></div> </a>
+        </a>
+      </div>
+    </section>
+
+    <!-- Second section with embedded Google Maps iframe and park description -->
+    <section class="second section">
+      <h1>  
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.80374712612!2d151.17518047570977!3d-33.89470787321677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b031088ee0e9%3A0xf017d68f9f10320!2sCamperdown%20Memorial%20Rest%20Park!5e0!3m2!1sen!2sau!4v1727333786880!5m2!1sen!2sau" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </h1>
+      <p>Camperdown Memorial Rest Park is located in the heart of Newtown, NSW, a
+         lively suburb known for its diverse community. The microsite will
+          explore how the park serves as a green haven and a gorgeous place to shoot photographs.</p>
+    </section>
+
+    <!-- Image gallery section with links to different pages -->
+    <section class="image-gallery">
+      
+        <!-- Safety & Legal Guidelines image item with overlay text -->
+        <div class="image-item">
+        <a href="safety.html">
+        <img src="images/img1.jpg" alt="Safety & Legal Guidelines page"></a>
+        <div class="overlay">
+          <h3>SAFETY & LEGAL GUIDELINES</h3>
+          <p>Protect the park and stay safe.</p>
+        </div>
+      </div>
+
+      <!-- Perfect Moments image item with overlay text -->
+      <div class="image-item">
+        <a href="perfect moments.html">
+        <img src="images/img2.jpg" alt="Perfect Moments page"></a>
+        <div class="overlay">
+          <h3>PERFECT MOMENTS</h3>
+          <p>The best times for photography at the park</p>
+        </div>
+      </div>
+
+      <!-- Photo Gallery image item with overlay text -->
+      <div class="image-item">
+        <a href="photo gallery.html">
+        <img src="images/img3.jpg" alt="Photo Gallery page"></a>
+        <div class="overlay">
+          <h3>PHOTO GALLERY</h3>
+          <p>Get inspired here</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer with camera description and credits -->
+  <footer>
+    <section class="camera-discription">
+     <h3>All Photos shot on Ricoh GR III.</h3>
+    </section>
+
+    <section class="credit">
+    <h5>Cynthia Ni</h5>
+   </section>
+ </footer>
+
+</body>
+</html> 

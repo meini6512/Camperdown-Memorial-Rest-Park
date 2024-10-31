@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character encoding and viewport settings for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page title -->
+    <title>Photo Gallery page</title>
+
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header section with navigation bar -->
+    <header>
+        <nav>
+            <!-- Sidebar navigation for mobile view -->
+            <ul class="sidebar">
+                <li onclick="hideSidebar()">
+                    <a href="#">
+                        <!-- SVG icon for closing the sidebar -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- Navigation links to other pages -->
+                <li><a href="about.html">About</a></li>
+                <li><a href="safety.html">Safety & Legal Guidelines</a></li>
+                <li><a href="perfect moments.html">Perfect Moments</a></li>
+                <li><a href="photo gallery.html">Photo Gallery</a></li>
+            </ul>
+
+            <!-- Main navigation links for desktop view -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="hideOnMobile"><a href="about.html">About</a></li>
+                <li class="hideOnMobile"><a href="safety.html">Safety & Legal Guidelines</a></li>
+                <li class="hideOnMobile"><a href="perfect moments.html">Perfect Moments</a></li>
+                <li class="hideOnMobile"><a href="photo gallery.html">Photo Gallery</a></li>
+                
+                <!-- Hamburger menu button for opening sidebar on mobile view -->
+                <li class="menu-button" onclick="showSidebar()">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- JavaScript functions for toggling sidebar visibility on mobile view -->
+        <script>
+          function showSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+          }
+          function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+          }
+        </script>
+    </header>
+    
+    <!-- Section with title for the photo gallery -->
+    <section class="gallery top space">
+        <h1>Get inspired here.</h1>
+    </section>
+
+    <!-- Gallery section displaying a collection of images -->
+    <div id="gallery">
+        <img src="images/guitar man.jpg" alt="Guitar man">
+        <img src="images/dog back.jpg" alt="Dog from behind">
+        <img src="images/dog rolling.jpg" alt="Dog rolling on ground">
+        <img src="images/wall art 1.jpg" alt="Wall art 1">
+        <img src="images/one person sitting.jpg" alt="One person sitting">
+        <img src="images/graveyard 3.jpg" alt="Graveyard image 3">
+        <img src="images/two person.jpg" alt="Two people in park">
+        <img src="images/park sidewalk 1.jpg" alt="Park sidewalk">
+        <img src="images/sunset 1.jpg" alt="Sunset 1">
+        <img src="images/wall art 2.jpg" alt="Wall art 2">
+        <img src="images/img2.jpg" alt="Image 2">
+        <img src="images/tree.jpg" alt="Tree in park">
+        <img src="images/park sidewalk 2.JPG" alt="Park sidewalk 2">
+        <img src="images/graveyard 4.jpg" alt="Graveyard image 4">
+        <img src="images/chair.jpg" alt="Park chair">
+        <img src="images/church.jpg" alt="Church">
+        <img src="images/fish board.jpg" alt="Fish board">
+        <img src="images/img3.jpg" alt="Image 3">
+        <img src="images/dog running.jpg" alt="Dog running">
+        <img src="images/sunset 2.jpg" alt="Sunset 2">
+        <img src="images/sunset 3.JPG" alt="Sunset 3">
+        <img src="images/img1.jpg" alt="Image 1">
+    </div>
+
+    <!-- Footer section with camera information and photo credits -->
+    <footer>
+       <!-- Camera description section -->
+       <section class="camera-discription">
+        <h3>All Photos shot on Ricoh GR III.</h3>
+       </section>
+
+       <!-- Credits section for photographer -->
+       <section class="credit">
+       <h5>Cynthia Ni</h5>
+      </section>
+    </footer>
+</body>
+</html>

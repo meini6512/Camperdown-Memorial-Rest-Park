@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Safety Page</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header section with navigation bar -->
+    <header>
+        <nav>
+            <!-- Sidebar navigation for mobile view -->
+            <ul class="sidebar">
+                <li onclick="hideSidebar()">
+                    <a href="#">
+                        <!-- SVG icon to close the sidebar -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- Links to other pages of the site -->
+                <li><a href="about.html">About</a></li>
+                <li><a href="safety.html">Safety & Legal Guidelines</a></li>
+                <li><a href="perfect moments.html">Perfect Moments</a></li>
+                <li><a href="photo gallery.html">Photo Gallery</a></li>
+            </ul>
+
+            <!-- Main navigation for desktop view -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="hideOnMobile"><a href="about.html">About</a></li>
+                <li class="hideOnMobile"><a href="safety.html">Safety & Legal Guidelines</a></li>
+                <li class="hideOnMobile"><a href="perfect moments.html">Perfect Moments</a></li>
+                <li class="hideOnMobile"><a href="photo gallery.html">Photo Gallery</a></li>
+                
+                <!-- Hamburger menu button to open sidebar in mobile view -->
+                <li class="menu-button" onclick="showSidebar()">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Functions for showing and hiding the sidebar in mobile view -->
+        <script>
+          function showSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+          }
+          function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+          }
+        </script>
+    </header>
+
+    <!-- Main content area for safety information -->
+    <main class="safety-page">
+        
+        <!-- Section providing general safety guidelines -->
+        <section class="safety-guidelines">
+            <h1>General Safety Guidelines</h1>
+            <p>
+                To ensure that every visitor enjoys a safe and pleasant experience,
+                 please follow the general safety guidelines. Be mindful of your surroundings, 
+                 respect other visitors, and help us keep Camperdown Memorial Rest Park a welcoming space for all.
+            </p>
+        </section>
+
+        <!-- Section detailing legal requirements for visitors -->
+        <section class="legal-requirements">
+            <h1>Legal Requirements</h1>
+            <p>
+                All visitors are required to comply with local laws and posted restrictions to help preserve 
+                the park’s legacy and beauty for future generations.
+                <br><br>
+                As you capture the beauty of Camperdown Memorial Rest Park, please remember to respect others.
+                 Avoid disturbing people as you take photos, and keep noise to a minimum. If you’re photographing
+                  pets or people, kindly ask for their permission first to ensure everyone’s comfort and privacy.
+            </p>
+        </section>
+
+        <!-- Section focused on visitor responsibilities for park maintenance -->
+        <section class="protect-the-park">
+            <h1>Protect the Park</h1>
+            <p>
+                Help us keep Camperdown Memorial Rest Park clean and enjoyable for everyone. Dispose 
+                of rubbish in designated bins, and be mindful of maintaining the park’s natural environment.
+                <br>Let’s work together to preserve this space as a sanitary and welcoming area for all visitors.
+            </p>
+        </section>
+    </main>
+</body>
+</html>

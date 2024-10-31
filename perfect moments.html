@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Perfect Moments page</title>
+
+    <!-- Link to the main CSS + page-specific CSS files for styling -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="perfect moments.css">
+</head>
+<body>
+
+    <!-- Header section with navigation bar -->
+    <header>
+        <nav>
+            <!-- Sidebar navigation for mobile view -->
+            <ul class="sidebar">
+                <li onclick="hideSidebar()">
+                    <a href="#">
+                        <!-- SVG icon for closing the sidebar -->
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                            <path d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"/>
+                        </svg>
+                    </a>
+                </li>
+                <!-- Links to other pages of the site -->
+                <li><a href="about.html">About</a></li>
+                <li><a href="safety.html">Safety & Legal Guidelines</a></li>
+                <li><a href="perfect moments.html">Perfect Moments</a></li>
+                <li><a href="photo gallery.html">Photo Gallery</a></li>
+            </ul>
+
+            <!-- Main navigation for desktop view -->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="hideOnMobile"><a href="about.html">About</a></li>
+                <li class="hideOnMobile"><a href="safety.html">Safety & Legal Guidelines</a></li>
+                <li class="hideOnMobile"><a href="perfect moments.html">Perfect Moments</a></li>
+                <li class="hideOnMobile"><a href="photo gallery.html">Photo Gallery</a></li>
+                
+                <!-- Hamburger menu button for showing sidebar in mobile view -->
+                <li class="menu-button" onclick="showSidebar()">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 96 960 960" width="26">
+                            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- JavaScript functions for showing and hiding the sidebar in mobile view -->
+        <script>
+          function showSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'flex';
+          }
+          function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display = 'none';
+          }
+        </script>
+    </header>
+
+    <!-- Main content area for the Perfect Moments page -->
+    <main class="perfect-moments-content">
+        
+        <!-- Page title and subtitle -->
+        <h1 class="perfect-moments-title">Perfect Moments to Capture Photos in the Park</h1>
+        <h6 class="natural-light-subtitle">Natural light is a crucial element in photography.</h6>
+
+        <!-- Section describing early morning (Blue Hour) for photography -->
+        <section class="timeline-item">
+            <time class="timeline-time">5:50 AM<br><br>Blue<br>Hour</time>
+            <p class="timeline-description">
+                The early morning light offers a soft, golden hue, perfect for capturing the beauty
+                 of the park. Ideal for sunrise photos and calm, reflective shots.
+            </p>
+        </section>
+
+        <!-- Section describing midday (Noon) for photography -->
+        <section class="timeline-item">
+            <time class="timeline-time">12:00 PM<br><br>Noon</time>
+            <p class="timeline-description">
+                The midday sun brightens up the park, making it ideal for vibrant photos of
+                 greenery and open spaces. Capture the energy of visitors enjoying the park.
+            </p>
+        </section>
+
+        <!-- Section describing evening (Golden Hour) for photography -->
+        <section class="timeline-item">
+            <time class="timeline-time">7:20 PM<br><br>Golden<br>Hour</time>
+            <p class="timeline-description">
+                Golden hour approaches, bathing the park in warm light. This is a great time
+                 for portrait and landscape shots.
+            </p>
+        </section>
+
+        <!-- Section describing night-time (Moon Light) for photography -->
+        <section class="timeline-item">
+            <time class="timeline-time">9:00 PM<br><br>Moon<br>Light</time>
+            <p class="timeline-description">
+                As night falls, the park takes on a different atmosphere. Capture the glow 
+                of park lights and serene nighttime scenes.
+            </p>
+        </section>
+    </main>
+</body>
+</html>
